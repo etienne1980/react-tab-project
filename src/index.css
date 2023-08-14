@@ -252,8 +252,17 @@ ul {
   margin: 0 auto;
   margin-top: 1rem;
 }
+
+
+
+
+
+
+
+
 /* ============= PROJECT CSS =============== */
 
+/* section which includes 2 components: jobInfo and buttonContainer */
 .jobs-center {
   width: 80vw;
   margin: 5rem auto;
@@ -262,6 +271,7 @@ ul {
 
 .btn-container {
   display: flex;
+  /* this will bw column in the media query */
   flex-direction: row;
   justify-content: center;
   gap: 0.5rem;
@@ -269,6 +279,7 @@ ul {
   margin-bottom: 4rem;
 }
 
+/* every btn but the active one */
 .job-btn {
   background: transparent;
   border-color: transparent;
@@ -276,58 +287,73 @@ ul {
   cursor: pointer;
   transition: var(--transition);
 }
+
 .job-btn:hover {
   color: var(--primary-500);
-  box-shadow: 0 2px var(--primary-500);
+  box-shadow: 0px 2px var(--primary-500)
 }
 .active-btn {
-  color: var(--primary-500);
+  color: var(--primary-800);
   box-shadow: 0 2px var(--primary-500);
 }
-
+/* jobinfo > article > span  */
 .job-company {
   text-transform: uppercase;
   color: var(--grey-700);
   background: var(--grey-300);
+
+  /* avoid spanning all across */
   display: inline-block;
   padding: 0.375rem 0.75rem;
   border-radius: var(--borderRadius);
   margin: 0.75rem 0;
 }
+
+/* jobinfo > article > p  */
 .job-date {
   color: var(--grey-500);
   letter-spacing: var(--letterSpacing);
   margin-bottom: 2rem;
 }
 
+/* Duties component > div  */
 .job-desc {
   display: grid;
+
+  /* first column takes whatever the size of the icon */
   grid-template-columns: auto 1fr;
   column-gap: 2rem;
+
+  /* this place the icon in the center */
   align-items: center;
   margin-bottom: 1.25rem;
 }
 
+
+/* duties component > div > faIcon */
 .job-icon {
   color: var(--primary-500);
 }
 
+/* duties component > div > p */
 .job-desc p {
   color: var(--grey-700);
   line-height: 1.5;
 }
 
-@media screen and (min-width: 992px) {
+
+@media screen and (min-width: 768px) {
   .jobs-center {
-    width: 90vw;
+    width: 95vw;
     display: grid;
-    grid-template-columns: 200px 1fr;
-    column-gap: 4rem;
+    grid-template-columns:10% 1fr;
+    column-gap: 2rem;
   }
   .btn-container {
     flex-direction: column;
     justify-content: flex-start;
   }
+
   .job-btn {
     margin-bottom: 1rem;
   }
